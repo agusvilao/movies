@@ -12,7 +12,6 @@ export function MoviesGrid ({search}){
     const [page, setPage] = useState(1);
 
     useEffect(()=> {
-        console.log(page)
         async function fetchMovies(){
             const searchUrl = search?
             '/search/movie?query=' + search + '&page=' + page:
@@ -27,7 +26,6 @@ export function MoviesGrid ({search}){
 
         }
         fetchMovies();
-        console.log(movies.length)
 
     }, [search,page])
 
